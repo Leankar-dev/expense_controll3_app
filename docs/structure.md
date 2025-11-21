@@ -33,12 +33,12 @@ expense_controll_app/
 │   │   │   └── app_constants.dart     # Constantes globais
 │   │   │
 │   │   ├── theme/
-│   │   │   ├── app_theme.dart         # Tema Neumorphic
-│   │   │   ├── app_colors.dart        # Paleta de cores
-│   │   │   └── text_styles.dart       # Estilos de texto
+│   │   │   ├── app_theme.dart         # Tema Neumorphic  - ok
+│   │   │   ├── app_colors.dart        # Paleta de cores  - ok
+│   │   │   └── text_styles.dart       # Estilos de texto - ok
 │   │   │
 │   │   ├── exceptions/
-│   │   │   └── base_exception.dart    # Exceções customizadas
+│   │   │   └── base_exception.dart    # Exceções customizadas - ok
 │   │   │
 │   │   ├── utils/
 │   │   │   ├── validators.dart        # Validadores de form
