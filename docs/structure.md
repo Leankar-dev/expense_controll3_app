@@ -29,8 +29,8 @@ expense_controll_app/
 │   │
 │   ├── core/                          # 🔧 Configurações e utilitários
 │   │   ├── config/
-│   │   │   ├── app_routes.dart        # Rotas nomeadas
-│   │   │   └── app_constants.dart     # Constantes globais
+│   │   │   ├── app_routes.dart        # Rotas nomeadas       -  ok
+│   │   │   └── app_constants.dart     # Constantes globais   -  ok
 │   │   │
 │   │   ├── theme/
 │   │   │   ├── app_theme.dart         # Tema Neumorphic  - ok
@@ -41,10 +41,10 @@ expense_controll_app/
 │   │   │   └── base_exception.dart    # Exceções customizadas - ok
 │   │   │
 │   │   ├── utils/
-│   │   │   ├── validators.dart        # Validadores de form
-│   │   │   ├── formatters.dart        # Formatação de dados
-│   │   │   ├── date_helper.dart       # Utilitários de data
-│   │   │   └── currency_helper.dart   # Formatação de moeda
+│   │   │   ├── validators.dart        # Validadores de form  -  ok
+│   │   │   ├── formatters.dart        # Formatação de dados  -  ok
+│   │   │   ├── date_helper.dart       # Utilitários de data  -  ok
+│   │   │   └── currency_helper.dart   # Formatação de moeda  -  ok
 │   │   │
 │   │   └── widgets/                   # Widgets reutilizáveis
 │   │       ├── custom_neumorphic_button.dart
