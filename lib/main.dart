@@ -1,4 +1,5 @@
 import 'package:expense_controll3_app/core/widgets/custom_neumorphic_button.dart';
+import 'package:expense_controll3_app/core/widgets/custom_snackbar.dart';
 import 'package:expense_controll3_app/core/widgets/neumorphic_text_form_field.dart';
 import 'package:flutter/material.dart';
 
@@ -66,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 icon: Icons.add,
                 onPressed: () {
                   _incrementCounter();
+                  CustomSnackBar.showSuccess(context, 'Operation successful!');
                 },
               ),
               const SizedBox(
@@ -73,6 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               NeumorphicTextFormField(
                 hintText: 'Digite algo',
+              ),
+              const SizedBox(
+                height: 20,
               ),
             ],
           ),
