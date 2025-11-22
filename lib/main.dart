@@ -1,3 +1,4 @@
+import 'package:expense_controll3_app/core/widgets/custom_neumorphic_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -52,6 +53,20 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomNeumorphicButton(
+                // textColor: Colors.amber,
+                text: 'botão teste',
+                icon: Icons.add,
+                onPressed: () {
+                  print('Botão pressionado');
+                },
+              ),
             ),
           ],
         ),
