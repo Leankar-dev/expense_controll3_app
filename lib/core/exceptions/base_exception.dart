@@ -1,5 +1,3 @@
-/// Classe base para todas as exceções customizadas do aplicativo.
-/// Fornece estrutura consistente para tratamento de erros.
 sealed class AppException implements Exception {
   final String message;
   final String? code;
@@ -17,11 +15,6 @@ sealed class AppException implements Exception {
   String toString() => 'AppException: $message (code: $code)';
 }
 
-// ============================================================
-// EXCEÇÕES DE AUTENTICAÇÃO
-// ============================================================
-
-/// Exceção base para erros de autenticação
 sealed class AuthException extends AppException {
   const AuthException({
     required super.message,
@@ -31,7 +24,6 @@ sealed class AuthException extends AppException {
   });
 }
 
-/// Utilizador não encontrado
 class UserNotFoundException extends AuthException {
   const UserNotFoundException({
     super.message = 'Utilizador não encontrado',
@@ -41,7 +33,6 @@ class UserNotFoundException extends AuthException {
   });
 }
 
-/// Senha incorreta
 class WrongPasswordException extends AuthException {
   const WrongPasswordException({
     super.message = 'Palavra-passe incorreta',
@@ -51,7 +42,6 @@ class WrongPasswordException extends AuthException {
   });
 }
 
-/// Email inválido
 class InvalidEmailException extends AuthException {
   const InvalidEmailException({
     super.message = 'Email inválido',
@@ -61,7 +51,6 @@ class InvalidEmailException extends AuthException {
   });
 }
 
-/// Email já em uso
 class EmailAlreadyInUseException extends AuthException {
   const EmailAlreadyInUseException({
     super.message = 'Este email já está em uso',
@@ -71,7 +60,6 @@ class EmailAlreadyInUseException extends AuthException {
   });
 }
 
-/// Senha fraca
 class WeakPasswordException extends AuthException {
   const WeakPasswordException({
     super.message = 'A palavra-passe é muito fraca',
@@ -81,7 +69,6 @@ class WeakPasswordException extends AuthException {
   });
 }
 
-/// Utilizador desativado
 class UserDisabledException extends AuthException {
   const UserDisabledException({
     super.message = 'Esta conta foi desativada',
@@ -91,7 +78,6 @@ class UserDisabledException extends AuthException {
   });
 }
 
-/// Operação não permitida
 class OperationNotAllowedException extends AuthException {
   const OperationNotAllowedException({
     super.message = 'Operação não permitida',
@@ -101,7 +87,6 @@ class OperationNotAllowedException extends AuthException {
   });
 }
 
-/// Muitas tentativas
 class TooManyRequestsException extends AuthException {
   const TooManyRequestsException({
     super.message = 'Demasiadas tentativas. Tente novamente mais tarde',
@@ -111,7 +96,6 @@ class TooManyRequestsException extends AuthException {
   });
 }
 
-/// Sessão expirada
 class SessionExpiredException extends AuthException {
   const SessionExpiredException({
     super.message = 'A sua sessão expirou. Faça login novamente',
@@ -121,7 +105,6 @@ class SessionExpiredException extends AuthException {
   });
 }
 
-/// Não autenticado
 class UnauthenticatedException extends AuthException {
   const UnauthenticatedException({
     super.message = 'É necessário fazer login',
@@ -131,7 +114,6 @@ class UnauthenticatedException extends AuthException {
   });
 }
 
-/// Erro de autenticação desconhecido
 class UnknownAuthException extends AuthException {
   const UnknownAuthException({
     super.message = 'Erro de autenticação. Tente novamente',
@@ -141,11 +123,6 @@ class UnknownAuthException extends AuthException {
   });
 }
 
-// ============================================================
-// EXCEÇÕES DE REDE
-// ============================================================
-
-/// Exceção base para erros de rede
 sealed class NetworkException extends AppException {
   const NetworkException({
     required super.message,
@@ -155,7 +132,6 @@ sealed class NetworkException extends AppException {
   });
 }
 
-/// Sem conexão à internet
 class NoInternetException extends NetworkException {
   const NoInternetException({
     super.message = 'Sem ligação à internet',
@@ -165,7 +141,6 @@ class NoInternetException extends NetworkException {
   });
 }
 
-/// Timeout de conexão
 class ConnectionTimeoutException extends NetworkException {
   const ConnectionTimeoutException({
     super.message = 'A ligação expirou. Verifique a sua internet',
@@ -175,7 +150,6 @@ class ConnectionTimeoutException extends NetworkException {
   });
 }
 
-/// Erro de servidor
 class ServerException extends NetworkException {
   final int? statusCode;
 
@@ -192,7 +166,6 @@ class ServerException extends NetworkException {
       'ServerException: $message (code: $code, statusCode: $statusCode)';
 }
 
-/// Serviço indisponível
 class ServiceUnavailableException extends NetworkException {
   const ServiceUnavailableException({
     super.message = 'Serviço temporariamente indisponível',
@@ -202,11 +175,6 @@ class ServiceUnavailableException extends NetworkException {
   });
 }
 
-// ============================================================
-// EXCEÇÕES DE BASE DE DADOS
-// ============================================================
-
-/// Exceção base para erros de base de dados
 sealed class DatabaseException extends AppException {
   const DatabaseException({
     required super.message,
@@ -216,7 +184,6 @@ sealed class DatabaseException extends AppException {
   });
 }
 
-/// Erro ao inserir dados
 class InsertException extends DatabaseException {
   const InsertException({
     super.message = 'Erro ao guardar dados',
@@ -226,7 +193,6 @@ class InsertException extends DatabaseException {
   });
 }
 
-/// Erro ao atualizar dados
 class UpdateException extends DatabaseException {
   const UpdateException({
     super.message = 'Erro ao atualizar dados',
@@ -236,7 +202,6 @@ class UpdateException extends DatabaseException {
   });
 }
 
-/// Erro ao eliminar dados
 class DeleteException extends DatabaseException {
   const DeleteException({
     super.message = 'Erro ao eliminar dados',
@@ -246,7 +211,6 @@ class DeleteException extends DatabaseException {
   });
 }
 
-/// Erro ao consultar dados
 class QueryException extends DatabaseException {
   const QueryException({
     super.message = 'Erro ao consultar dados',
@@ -256,7 +220,6 @@ class QueryException extends DatabaseException {
   });
 }
 
-/// Registo não encontrado
 class NotFoundException extends DatabaseException {
   const NotFoundException({
     super.message = 'Registo não encontrado',
@@ -266,7 +229,6 @@ class NotFoundException extends DatabaseException {
   });
 }
 
-/// Registo duplicado
 class DuplicateException extends DatabaseException {
   const DuplicateException({
     super.message = 'Este registo já existe',
@@ -276,7 +238,6 @@ class DuplicateException extends DatabaseException {
   });
 }
 
-/// Erro de migração
 class MigrationException extends DatabaseException {
   const MigrationException({
     super.message = 'Erro na migração da base de dados',
@@ -286,11 +247,6 @@ class MigrationException extends DatabaseException {
   });
 }
 
-// ============================================================
-// EXCEÇÕES DE SINCRONIZAÇÃO
-// ============================================================
-
-/// Exceção base para erros de sincronização
 sealed class SyncException extends AppException {
   const SyncException({
     required super.message,
@@ -300,7 +256,6 @@ sealed class SyncException extends AppException {
   });
 }
 
-/// Conflito de sincronização
 class SyncConflictException extends SyncException {
   final String? localVersion;
   final String? remoteVersion;
@@ -315,7 +270,6 @@ class SyncConflictException extends SyncException {
   });
 }
 
-/// Erro de sincronização
 class SyncFailedException extends SyncException {
   const SyncFailedException({
     super.message = 'Falha na sincronização. Tente novamente',
@@ -325,7 +279,6 @@ class SyncFailedException extends SyncException {
   });
 }
 
-/// Permissão negada no Firestore
 class PermissionDeniedException extends SyncException {
   const PermissionDeniedException({
     super.message = 'Permissão negada para aceder aos dados',
@@ -335,11 +288,6 @@ class PermissionDeniedException extends SyncException {
   });
 }
 
-// ============================================================
-// EXCEÇÕES DE VALIDAÇÃO
-// ============================================================
-
-/// Exceção base para erros de validação
 sealed class ValidationException extends AppException {
   final String? field;
 
@@ -356,7 +304,6 @@ sealed class ValidationException extends AppException {
       'ValidationException: $message (field: $field, code: $code)';
 }
 
-/// Campo obrigatório vazio
 class RequiredFieldException extends ValidationException {
   const RequiredFieldException({
     required String fieldName,
@@ -367,7 +314,6 @@ class RequiredFieldException extends ValidationException {
   }) : super(message: 'O campo $fieldName é obrigatório');
 }
 
-/// Valor inválido
 class InvalidValueException extends ValidationException {
   const InvalidValueException({
     super.message = 'Valor inválido',
@@ -378,7 +324,6 @@ class InvalidValueException extends ValidationException {
   });
 }
 
-/// Valor fora do intervalo permitido
 class OutOfRangeException extends ValidationException {
   final num? minValue;
   final num? maxValue;
@@ -394,7 +339,6 @@ class OutOfRangeException extends ValidationException {
   });
 }
 
-/// Formato inválido
 class InvalidFormatException extends ValidationException {
   const InvalidFormatException({
     super.message = 'Formato inválido',
@@ -405,7 +349,6 @@ class InvalidFormatException extends ValidationException {
   });
 }
 
-/// Valor negativo não permitido
 class NegativeValueException extends ValidationException {
   const NegativeValueException({
     super.message = 'O valor não pode ser negativo',
@@ -416,7 +359,6 @@ class NegativeValueException extends ValidationException {
   });
 }
 
-/// Valor zero não permitido
 class ZeroValueException extends ValidationException {
   const ZeroValueException({
     super.message = 'O valor deve ser maior que zero',
@@ -427,11 +369,6 @@ class ZeroValueException extends ValidationException {
   });
 }
 
-// ============================================================
-// EXCEÇÕES DE EXPORTAÇÃO
-// ============================================================
-
-/// Exceção base para erros de exportação
 sealed class ExportException extends AppException {
   const ExportException({
     required super.message,
@@ -441,7 +378,6 @@ sealed class ExportException extends AppException {
   });
 }
 
-/// Erro ao gerar ficheiro
 class FileGenerationException extends ExportException {
   const FileGenerationException({
     super.message = 'Erro ao gerar ficheiro',
@@ -451,7 +387,6 @@ class FileGenerationException extends ExportException {
   });
 }
 
-/// Erro ao partilhar ficheiro
 class ShareException extends ExportException {
   const ShareException({
     super.message = 'Erro ao partilhar ficheiro',
@@ -461,7 +396,6 @@ class ShareException extends ExportException {
   });
 }
 
-/// Sem dados para exportar
 class NoDataToExportException extends ExportException {
   const NoDataToExportException({
     super.message = 'Não existem dados para exportar',
@@ -471,7 +405,6 @@ class NoDataToExportException extends ExportException {
   });
 }
 
-/// Permissão de armazenamento negada
 class StoragePermissionException extends ExportException {
   const StoragePermissionException({
     super.message = 'Permissão de armazenamento negada',
@@ -481,11 +414,6 @@ class StoragePermissionException extends ExportException {
   });
 }
 
-// ============================================================
-// EXCEÇÕES DE NOTIFICAÇÃO
-// ============================================================
-
-/// Exceção base para erros de notificação
 sealed class NotificationException extends AppException {
   const NotificationException({
     required super.message,
@@ -495,7 +423,6 @@ sealed class NotificationException extends AppException {
   });
 }
 
-/// Permissão de notificação negada
 class NotificationPermissionException extends NotificationException {
   const NotificationPermissionException({
     super.message = 'Permissão de notificação negada',
@@ -505,7 +432,6 @@ class NotificationPermissionException extends NotificationException {
   });
 }
 
-/// Erro ao agendar notificação
 class ScheduleNotificationException extends NotificationException {
   const ScheduleNotificationException({
     super.message = 'Erro ao agendar notificação',
@@ -515,11 +441,6 @@ class ScheduleNotificationException extends NotificationException {
   });
 }
 
-// ============================================================
-// EXCEÇÃO GENÉRICA
-// ============================================================
-
-/// Exceção genérica para erros não categorizados
 class UnknownException extends AppException {
   const UnknownException({
     super.message = 'Ocorreu um erro inesperado',
@@ -529,11 +450,6 @@ class UnknownException extends AppException {
   });
 }
 
-// ============================================================
-// EXCEÇÃO DE CACHE
-// ============================================================
-
-/// Exceção base para erros de cache
 sealed class CacheException extends AppException {
   const CacheException({
     required super.message,
@@ -543,7 +459,6 @@ sealed class CacheException extends AppException {
   });
 }
 
-/// Cache expirado
 class CacheExpiredException extends CacheException {
   const CacheExpiredException({
     super.message = 'Cache expirado',
@@ -553,7 +468,6 @@ class CacheExpiredException extends CacheException {
   });
 }
 
-/// Cache não encontrado
 class CacheNotFoundException extends CacheException {
   const CacheNotFoundException({
     super.message = 'Cache não encontrado',
@@ -563,14 +477,7 @@ class CacheNotFoundException extends CacheException {
   });
 }
 
-// ============================================================
-// MAPEADOR DE EXCEÇÕES
-// ============================================================
-
-/// Classe utilitária para mapear exceções do Firebase e outras
-/// para exceções customizadas do aplicativo.
 abstract final class ExceptionMapper {
-  /// Mapeia código de erro do Firebase Auth para AuthException
   static AuthException mapFirebaseAuthError(String code, [dynamic error]) {
     return switch (code) {
       'user-not-found' => UserNotFoundException(originalError: error),
@@ -593,7 +500,6 @@ abstract final class ExceptionMapper {
     };
   }
 
-  /// Mapeia código de erro do Firestore para SyncException
   static SyncException mapFirestoreError(String code, [dynamic error]) {
     return switch (code) {
       'permission-denied' => PermissionDeniedException(originalError: error),
@@ -609,7 +515,6 @@ abstract final class ExceptionMapper {
     };
   }
 
-  /// Mapeia exceção genérica para AppException
   static AppException mapGenericError(dynamic error, [StackTrace? stackTrace]) {
     if (error is AppException) {
       return error;
