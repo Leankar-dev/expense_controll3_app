@@ -128,6 +128,25 @@ abstract final class AppColors {
   static const Color categoryShopping = Color(0xFFE91E63);
 
   // ============================================================
+  // CORES DE MÉTODOS DE PAGAMENTO
+  // ============================================================
+
+  /// Cartão de Crédito
+  static const Color paymentCreditCard = Color(0xFF6366F1);
+
+  /// Cartão de Débito
+  static const Color paymentDebitCard = Color(0xFF3B82F6);
+
+  /// MB Way
+  static const Color paymentMbWay = Color(0xFFE11D48);
+
+  /// PIX
+  static const Color paymentPix = Color(0xFF22C55E);
+
+  /// Dinheiro
+  static const Color paymentCash = Color(0xFFF59E0B);
+
+  // ============================================================
   // CORES DE ESTADO
   // ============================================================
 
@@ -254,6 +273,28 @@ abstract final class AppColors {
         return categoryEducation;
       case 'compras':
         return categoryShopping;
+      default:
+        return categoryOthers;
+    }
+  }
+
+  /// Retorna a cor baseada no método de pagamento
+  static Color getPaymentMethodColor(String paymentMethod) {
+    switch (paymentMethod.toLowerCase()) {
+      case 'creditcard':
+      case 'cartão de crédito':
+        return paymentCreditCard;
+      case 'debitcard':
+      case 'cartão de débito':
+        return paymentDebitCard;
+      case 'mbway':
+      case 'mb way':
+        return paymentMbWay;
+      case 'pix':
+        return paymentPix;
+      case 'cash':
+      case 'dinheiro':
+        return paymentCash;
       default:
         return categoryOthers;
     }
