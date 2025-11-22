@@ -1,6 +1,7 @@
 import 'package:expense_controll3_app/core/widgets/custom_app_bar.dart';
 import 'package:expense_controll3_app/core/widgets/custom_neumorphic_button.dart';
 import 'package:expense_controll3_app/core/widgets/custom_snackbar.dart';
+import 'package:expense_controll3_app/core/widgets/expense_card.dart';
 import 'package:expense_controll3_app/core/widgets/neumorphic_text_form_field.dart';
 import 'package:flutter/material.dart';
 
@@ -78,6 +79,14 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const SizedBox(
                 height: 20,
+              ),
+              ExpenseCard(
+                id: '1',
+                amount: 100.0,
+                category: 'Food',
+                description: 'Lunch at restaurant',
+                date: DateTime.now(),
+                isIncome: false,
               ),
             ],
           ),

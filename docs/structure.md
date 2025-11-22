@@ -47,13 +47,13 @@ expense_controll_app/
 │   │   │   └── currency_helper.dart   # Formatação de moeda  -  ok
 │   │   │
 │   │   └── widgets/                   # Widgets reutilizáveis
-│   │       ├── custom_neumorphic_button.dart
-│   │       ├── neumorphic_text_form_field.dart
-│   │       ├── custom_snackbar.dart
-│   │       ├── custom_app_bar.dart
-│   │       ├── expense_card.dart
-│   │       ├── loading_shimmer.dart
-│   │       └── hero_dialog.dart
+│   │       ├── custom_neumorphic_button.dart       -  ok
+│   │       ├── neumorphic_text_form_field.dart     -  ok
+│   │       ├── custom_snackbar.dart                -  ok
+│   │       ├── custom_app_bar.dart                 -  ok
+│   │       ├── expense_card.dart                   -  ok
+│   │       ├── loading_shimmer.dart                -  ok
+│   │       └── hero_dialog.dart                    -  ok
 │   │
 │   ├── data/                          # 💾 Camada de Dados
 │   │   ├── models/
@@ -63,7 +63,7 @@ expense_controll_app/
 │   │   │   └── sync_metadata_model.dart
 │   │   │
 │   │   ├── enums/
-│   │   │   ├── transaction_type.dart  # Income/Expense
+│   │   │   ├── transaction_type.dart  # Income/Expense         
 │   │   │   └── payment_method.dart    # Cartão, MBWay, etc.
 │   │   │
 │   │   ├── local/                     # Persistência local (Drift)
