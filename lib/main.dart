@@ -1,4 +1,5 @@
 import 'package:expense_controll3_app/core/widgets/custom_neumorphic_button.dart';
+import 'package:expense_controll3_app/core/widgets/neumorphic_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -45,30 +46,36 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: .center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            // const SizedBox(height: 50),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CustomNeumorphicButton(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            mainAxisAlignment: .center,
+            children: [
+              const Text('You have pushed the button this many times:'),
+              // const SizedBox(height: 50),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomNeumorphicButton(
                 // textColor: Colors.amber,
                 text: 'botão teste',
                 icon: Icons.add,
                 onPressed: () {
-                  print('Botão pressionado');
+                  _incrementCounter();
                 },
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 20,
+              ),
+              NeumorphicTextFormField(
+                hintText: 'Digite algo',
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
