@@ -1,3 +1,4 @@
+import 'package:expense_controll3_app/core/widgets/custom_app_bar.dart';
 import 'package:expense_controll3_app/core/widgets/custom_neumorphic_button.dart';
 import 'package:expense_controll3_app/core/widgets/custom_snackbar.dart';
 import 'package:expense_controll3_app/core/widgets/neumorphic_text_form_field.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'EXPENSE CONTROLL',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'APP BAR CUSTOMIZADO'),
     );
   }
 }
@@ -41,10 +42,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        title: Text(widget.title),
+      appBar: CustomAppBar(
+        title: widget.title,
+        centerTitle: true,
       ),
       body: Center(
         child: Padding(
