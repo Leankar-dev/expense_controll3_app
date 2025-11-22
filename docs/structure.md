@@ -57,14 +57,14 @@ expense_controll_app/
 │   │
 │   ├── data/                          # 💾 Camada de Dados
 │   │   ├── models/
-│   │   │   ├── transaction_model.dart
+│   │   │   ├── transaction_model.dart      
 │   │   │   ├── category_model.dart
 │   │   │   ├── user_model.dart
 │   │   │   └── sync_metadata_model.dart
 │   │   │
 │   │   ├── enums/
-│   │   │   ├── transaction_type.dart  # Income/Expense         
-│   │   │   └── payment_method.dart    # Cartão, MBWay, etc.
+│   │   │   ├── transaction_type.dart  # Income/Expense         -  ok
+│   │   │   └── payment_method.dart    # Cartão, MBWay, etc.    -  ok
 │   │   │
 │   │   ├── local/                     # Persistência local (Drift)
 │   │   │   ├── database/
