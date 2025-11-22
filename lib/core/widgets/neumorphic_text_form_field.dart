@@ -3,6 +3,7 @@ import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import '../theme/app_colors.dart';
 import '../theme/text_styles.dart';
 
+/// A customizable Neumorphic styled TextFormField widget.
 class NeumorphicTextFormField extends StatefulWidget {
   final TextEditingController? controller;
 
