@@ -57,10 +57,10 @@ expense_controll_app/
 │   │
 │   ├── data/                          # 💾 Camada de Dados
 │   │   ├── models/
-│   │   │   ├── transaction_model.dart      
-│   │   │   ├── category_model.dart
-│   │   │   ├── user_model.dart
-│   │   │   └── sync_metadata_model.dart
+│   │   │   ├── transaction_model.dart      - ok
+│   │   │   ├── category_model.dart         - ok
+│   │   │   ├── user_model.dart             - ok
+│   │   │   └── sync_metadata_model.dart    - ok
 │   │   │
 │   │   ├── enums/
 │   │   │   ├── transaction_type.dart  # Income/Expense         -  ok
@@ -68,17 +68,17 @@ expense_controll_app/
 │   │   │
 │   │   ├── local/                     # Persistência local (Drift)
 │   │   │   ├── database/
-│   │   │   │   ├── app_database.dart  # Configuração Drift
-│   │   │   │   ├── app_database.g.dart
+│   │   │   │   ├── app_database.dart  # Configuração Drift    - ok
+│   │   │   │   ├── app_database.g.dart                        - ok
 │   │   │   │   └── tables/
-│   │   │   │       ├── transactions_table.dart
-│   │   │   │       ├── categories_table.dart
-│   │   │   │       └── sync_metadata_table.dart
+│   │   │   │       ├── transactions_table.dart                - ok
+│   │   │   │       ├── categories_table.dart                  - ok
+│   │   │   │       └── sync_metadata_table.dart               - ok
 │   │   │   │
 │   │   │   └── dao/                   # Data Access Objects
-│   │   │       ├── transaction_dao.dart
-│   │   │       ├── category_dao.dart
-│   │   │       └── sync_metadata_dao.dart
+│   │   │       ├── transaction_dao.dart     - ok
+│   │   │       ├── category_dao.dart        - ok
+│   │   │       └── sync_metadata_dao.dart   - ok
 │   │   │
 │   │   ├── remote/                    # Acesso remoto (Firebase)
 │   │   │   └── firebase/

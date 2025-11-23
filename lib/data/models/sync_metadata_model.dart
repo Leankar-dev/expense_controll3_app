@@ -1,3 +1,5 @@
+import '../local/database/tables/sync_metadata_table.dart';
+
 class SyncMetadataModel {
   final String entityId;
   final String entityType;
@@ -66,7 +68,7 @@ class SyncMetadataModel {
       entityId: json['entityId'] as String,
       entityType: json['entityType'] as String,
       lastSyncedAt: DateTime.parse(json['lastSyncedAt'] as String),
-      syncStatus: SyncStatus.fromString(json['syncStatus'] as String),
+      syncStatus: SyncStatusExtension.fromString(json['syncStatus'] as String),
       conflictData: json['conflictData'] as String?,
       retryCount: json['retryCount'] as int? ?? 0,
       errorMessage: json['errorMessage'] as String?,
@@ -143,16 +145,10 @@ class SyncMetadataModel {
   }
 }
 
-enum SyncStatus {
-  synced,
-
-  pending,
-
-  conflict,
-
-  error
-  ;
-
+/// 🔄 NOTA: Enum SyncStatus movido para sync_metadata_table.dart
+/// para evitar duplicação e manter a fonte única de verdade.
+/// Extensões de display mantidas aqui para separação de concerns.
+extension SyncStatusExtension on SyncStatus {
   String get displayName {
     return switch (this) {
       SyncStatus.synced => 'Sincronizado',
