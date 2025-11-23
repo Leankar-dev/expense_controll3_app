@@ -77,6 +77,7 @@ dependencies:
   
   # Functional Programming
   dartz: ^0.10.1
+  firebase_storage: ^13.0.4
 
 dev_dependencies:
   flutter_test:

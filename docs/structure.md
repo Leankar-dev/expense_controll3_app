@@ -82,12 +82,12 @@ expense_controll_app/
 │   │   │
 │   │   ├── remote/                    # Acesso remoto (Firebase)
 │   │   │   └── firebase/
-│   │   │       ├── firebase_auth_service.dart
-│   │   │       ├── firebase_sync_service.dart
-│   │   │       └── firebase_storage_service.dart
+│   │   │       ├── firebase_auth_service.dart      - ok
+│   │   │       ├── firebase_sync_service.dart      - ok
+│   │   │       └── firebase_storage_service.dart   - ok
 │   │   │
 │   │   └── repositories/              # Implementação de repositórios
-│   │       ├── transaction_repository.dart
+│   │       ├── transaction_repository.dart    - ok
 │   │       ├── category_repository.dart
 │   │       ├── auth_repository.dart
 │   │       └── sync_repository.dart
